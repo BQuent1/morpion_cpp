@@ -281,17 +281,14 @@ int main()
     {
         std::string nom_joueur_1{};
         char symbole_joueur_1{};
-        char symbole_ia{};
+        char symbole_ia{'O'};
         std::cout << "Joueur 1, quel est ton nom ?\n";
         std::cin >> nom_joueur_1;
         std::cout << nom_joueur_1 << ", quel symbole prends tu ?\n";
         std::cin >> symbole_joueur_1;
 
-        if(symbole_joueur_1 == 'X'){
-            symbole_ia = 'O';
-        }
-        else{
-            symbole_ia = 'O';
+        if(symbole_joueur_1 == symbole_ia){
+            symbole_ia = 'X';
         }
 
         game_start(create_player(nom_joueur_1, symbole_joueur_1), create_player("IA", symbole_ia), tab, mode_jeu);
