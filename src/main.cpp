@@ -288,7 +288,7 @@ int main()
         std::cin >> symbole_joueur_1;
 
         if(symbole_joueur_1 == symbole_ia){
-            symbole_ia = 'X';
+            symbole_ia = 'Y';
         }
 
         game_start(create_player(nom_joueur_1, symbole_joueur_1), create_player("IA", symbole_ia), tab, mode_jeu);
