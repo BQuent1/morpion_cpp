@@ -1,8 +1,8 @@
-# Install script for directory: C:/Users/quent/OneDrive - ESIEE Paris/Algo_prog/morpion_cpp
+# Install script for directory: C:/Users/quent/OneDrive - ESIEE Paris/COURS/Algo_prog/morpion_cpp
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/TD07")
+  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/morpion_cpp")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -52,6 +52,6 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-  file(WRITE "C:/Users/quent/OneDrive - ESIEE Paris/Algo_prog/morpion_cpp/build/${CMAKE_INSTALL_MANIFEST}"
+  file(WRITE "C:/Users/quent/OneDrive - ESIEE Paris/COURS/Algo_prog/morpion_cpp/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
 endif()

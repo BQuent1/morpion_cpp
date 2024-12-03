@@ -1,8 +1,8 @@
 [
 {
-  "directory": "C:/Users/quent/OneDrive - ESIEE Paris/Algo_prog/morpion_cpp/build",
-  "command": "C:\\mingw64\\bin\\c++.exe -g -std=gnu++17 -o CMakeFiles\\game.dir\\src\\main.cpp.obj -c \"C:\\Users\\quent\\OneDrive - ESIEE Paris\\Algo_prog\\morpion_cpp\\src\\main.cpp\"",
-  "file": "C:\\Users\\quent\\OneDrive - ESIEE Paris\\Algo_prog\\morpion_cpp\\src\\main.cpp",
+  "directory": "C:/Users/quent/OneDrive - ESIEE Paris/COURS/Algo_prog/morpion_cpp/build",
+  "command": "C:\\mingw64\\bin\\c++.exe -g -std=gnu++17 -o CMakeFiles\\game.dir\\src\\main.cpp.obj -c \"C:\\Users\\quent\\OneDrive - ESIEE Paris\\COURS\\Algo_prog\\morpion_cpp\\src\\main.cpp\"",
+  "file": "C:\\Users\\quent\\OneDrive - ESIEE Paris\\COURS\\Algo_prog\\morpion_cpp\\src\\main.cpp",
   "output": "CMakeFiles\\game.dir\\src\\main.cpp.obj"
 }
 ]

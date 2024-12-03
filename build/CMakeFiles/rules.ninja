@@ -42,7 +42,7 @@ rule CUSTOM_COMMAND
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = C:\mingw64\bin\cmake.exe --regenerate-during-build -S"C:\Users\quent\OneDrive - ESIEE Paris\Algo_prog\morpion_cpp" -B"C:\Users\quent\OneDrive - ESIEE Paris\Algo_prog\morpion_cpp\build"
+  command = C:\mingw64\bin\cmake.exe --regenerate-during-build -S"C:\Users\quent\OneDrive - ESIEE Paris\COURS\Algo_prog\morpion_cpp" -B"C:\Users\quent\OneDrive - ESIEE Paris\COURS\Algo_prog\morpion_cpp\build"
   description = Re-running CMake...
   generator = 1
 
