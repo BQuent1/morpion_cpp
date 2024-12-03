@@ -346,7 +346,7 @@ void game_start(Player player1, Player player2, std::array<char, 9> tab, int mod
         if (current_player.name == player1.name)
         {
             std::cout << "\n"
-                      << player2.name << " a gagne, bien ouej\n";
+                      << player2.name << " a gagne, t nul\n";
         }
         else if (current_player.name == player2.name)
         {
