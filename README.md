@@ -17,17 +17,21 @@ Cela voudrait dire soit que le joueur est en train de gagner et donc qu'il faut 
 
 Pour l'instant le programme parcoure la grille dans l'ordre et regarde les cases à cocher, ce qui peut mener à quelques 'erreurs' comme dans ce cas :
 
+```
     A   B   C\
 1 | X |   | X\
 2 | o | o | X\
 3 |   | o | o\
+```
 
 Ici l'IA (symbole X) doit jouer en B1 mais voilà ce qu'elle fait :
 
+```
     A   B   C\
 1 | X |   | X\
 2 | o | o | X\
 3 | X | o | o\
+```
 
 Elle a détecté en A3 que les cases B3 et C3 était pleine de symbole identique donc elle a placer son symbole en A3 mais elle aurait du le mettre en B1 afin de gagner directemenent.
 Ce petit problème de cohérence est encore en cours d'amélioration avec des probabilités plus grande d'être choisi si les symboles adjacents sont ceux de l'IA.
