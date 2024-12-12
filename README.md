@@ -33,7 +33,7 @@ Ici, l'IA (symbole X) devrait jouer en B1, mais elle joue ainsi :
 ```
 
 Elle a détecté qu'en A3, les cases B3 et C3 étaient pleines de symboles identiques. Elle a donc placé son symbole en A3, alors qu'elle aurait dû le mettre en B1 pour gagner immédiatement.
-Ce problème de cohérence est encore en cours d'amélioration, avec des probabilités plus élevées d'être choisies si les symboles adjacents sont ceux de l'IA.
+Ce problème de cohérence est encore en cours d'amélioration, avec des probabilités plus élevées d'être choisies pour les cases vides si les symboles adjacents sont ceux de l'IA.
 
 Si l'IA ne trouve aucune case cohérente avec les symboles adjacents, elle place simplement un symbole au hasard dans la grille, ce qui lui permet au moins de commencer la partie.
 
