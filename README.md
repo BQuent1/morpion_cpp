@@ -13,7 +13,7 @@ Vous jouez chacun votre tour jusqu'à ce qu'il y ait un gagnant ou que le tablea
 J'ai proposé une amélioration du mode de jeu en solo. Le programme regarde en fait pour chaque case vide, quelle sont les cases dépendantes qui permettrait d'arriver à la victoire ou alors à la défaite de l'IA.
 Je m'explique, si par exemple la case B1 est vide, alors le programme pourrait définir de mettre son symbole ici. 
 Pour décider, je vais regarder si les cases A1 et A3 ou B2 et B3 sont pleines de symboles identiques. 
-Cela voudrait dire soit que le joueur est en train de gagner et donc qu'il faut mettre un symbole à cet endroit, soit que l'IA a déjà placer des symboles dans ces cases et que donc il faut placer un symbole dans la case actuelle pour gagner.
+Cela voudrait dire soit que le joueur est en train de gagner et donc qu'il faut mettre un symbole en B1, soit que l'IA a déjà placer des symboles dans ces cases et qu'il faudrait donc placer un symbole dans la case B1 pour gagner.
 
 Pour l'instant le programme parcoure la grille dans l'ordre et regarde les cases à cocher, ce qui peut mener à quelques 'erreurs' comme dans ce cas :
 
