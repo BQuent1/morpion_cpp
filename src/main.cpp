@@ -1,3 +1,26 @@
+/*rest à implémenter IA niveau 2 :
+
+L'IA doit prioriser sa victoire plutot que bloquer l'adversaire.
+exemple :
+    A   B   C
+1 | X |   | X
+2 | o | o | X
+3 |   | o | o
+
+Ici l'IA doit jouer en B1 mais voilà ce qu'elle fait :
+
+    A   B   C
+1 | X |   | X
+2 | o | o | X
+3 | X | o | o
+
+elle va au dernier 3 rencontré alors qu'elle devrait d'abord regarder si ses pions peuvent gagner, si c'est le cas, elle priorise son choix
+*/
+
+
+
+
+
 #include <iostream>
 #include "Player.h"
 #include <cstdlib>
@@ -271,7 +294,6 @@ void game_start(Player player1, Player player2, std::array<char, 9> tab, int mod
                                 break;
                             }
                         }
-                        std::cout << "\n i:" << i << " choix : " << choix_case << "\n";
                     }
 
                     if (choix_case == 10)
@@ -399,10 +421,10 @@ int main()
         std::cin >> nom_joueur_1;
         std::cout << nom_joueur_1 << ", quel symbole prends tu ?\n";
         std::cin >> symbole_joueur_1;
-        std::cout << nom_joueur_1 << ", quel niveau d'IA prends tu ?\n 1:facile\n2:pas tres complique\n";
+        std::cout << nom_joueur_1 << ", quel niveau d'IA prends tu ?\n1:facile\n2:pas tres complique\n";
         std::cin >> niveau_ia;
 
-        if (symbole_joueur_1 == symbole_ia)
+        if (symbole_joueur_1 == symbole_ia || symbole_joueur_1 == 'o')
         {
             symbole_ia = 'X';
         }
