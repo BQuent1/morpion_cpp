@@ -1,20 +1,143 @@
-/*reste à implémenter IA niveau 2 :
+/*
 
-L'IA doit prioriser sa victoire plutot que bloquer l'adversaire.
-exemple :
-    A   B   C
-1 | X |   | X
-2 | o | o | X
-3 |   | o | o
+for (int i = 0; i < tab.size(); i++)
+                    {
+                        if (tab[i] == ' ')
+                        {
+                            switch (i)
+                            {
+                            case 0:
+                                if ((tab[1] == tab[2] && tab[1] != ' ') ||
+                                    (tab[3] == tab[6] && tab[3] != ' ') ||
+                                    (tab[4] == tab[8] && tab[4] != ' '))
+                                {
 
-Ici l'IA doit jouer en B1 mais voilà ce qu'elle fait :
+                                    if ((tab[1] == tab[2] && tab[1] == current_player.symbole) ||
+                                        (tab[3] == tab[6] && tab[3] == current_player.symbole) ||
+                                        (tab[4] == tab[8] && tab[4] == current_player.symbole))
+                                    {
+                                        choix_def = 0;
+                                    }
 
-    A   B   C
-1 | X |   | X
-2 | o | o | X
-3 | X | o | o
+                                    choix_case = 0;
+                                }
+                                break;
+                            case 1:
+                                if ((tab[0] == tab[2] && tab[0] != ' ') ||
+                                    (tab[4] == tab[7] && tab[4] != ' '))
+                                {
+                                    if ((tab[0] == tab[2] && tab[0] == current_player.symbole) ||
+                                        (tab[4] == tab[7] && tab[4] == current_player.symbole))
+                                    {
+                                        choix_def = 1;
+                                    }
+                                    choix_case = 1;
+                                }
+                                break;
+                            case 2:
+                                if ((tab[0] == tab[1] && tab[0] != ' ') ||
+                                    (tab[4] == tab[6] && tab[4] != ' ') ||
+                                    (tab[5] == tab[8] && tab[5] != ' '))
+                                {
+                                    if ((tab[0] == tab[1] && tab[0] == current_player.symbole) ||
+                                        (tab[5] == tab[8] && tab[5] == current_player.symbole) ||
+                                        (tab[4] == tab[6] && tab[4] == current_player.symbole))
+                                    {
+                                        choix_def = 2;
+                                    }
 
-elle va au dernier 3 rencontré alors qu'elle devrait d'abord regarder si ses pions peuvent gagner, si c'est le cas, elle priorise son choix
+                                    choix_case = 2;
+                                }
+                                break;
+                            case 3:
+                                if ((tab[0] == tab[6] && tab[0] != ' ') ||
+                                    (tab[4] == tab[5] && tab[4] != ' '))
+                                {
+                                    if ((tab[0] == tab[6] && tab[0] == current_player.symbole) ||
+                                        (tab[4] == tab[5] && tab[4] == current_player.symbole))
+                                    {
+                                        choix_def = 3;
+                                    }
+                                    choix_case = 3;
+                                }
+                                break;
+                            case 4:
+                                if ((tab[0] == tab[8] && tab[0] != ' ') ||
+                                    (tab[1] == tab[7] && tab[1] != ' ') ||
+                                    (tab[2] == tab[6] && tab[2] != ' ') ||
+                                    (tab[3] == tab[5] && tab[3] != ' '))
+                                {
+                                    if ((tab[0] == tab[8] && tab[0] == current_player.symbole) ||
+                                        (tab[1] == tab[7] && tab[1] == current_player.symbole) ||
+                                        (tab[2] == tab[6] && tab[2] == current_player.symbole) ||
+                                        (tab[3] == tab[5] && tab[3] == current_player.symbole))
+                                    {
+                                        choix_def = 4;
+                                    }
+                                    choix_case = 4;
+                                }
+                                break;
+                            case 5:
+                                if ((tab[2] == tab[8] && tab[2] != ' ') ||
+                                    (tab[4] == tab[3] && tab[4] != ' '))
+                                {
+                                    if ((tab[2] == tab[8] && tab[2] == current_player.symbole) ||
+                                        (tab[4] == tab[3] && tab[4] == current_player.symbole))
+                                    {
+                                        choix_def = 5;
+                                    }
+                                    choix_case = 5;
+                                }
+                                break;
+                            case 6:
+                                if ((tab[0] == tab[3] && tab[0] != ' ') ||
+                                    (tab[7] == tab[8] && tab[7] != ' ') ||
+                                    (tab[4] == tab[2] && tab[4] != ' '))
+                                {
+                                    if ((tab[0] == tab[3] && tab[0] == current_player.symbole) ||
+                                        (tab[7] == tab[8] && tab[7] == current_player.symbole) ||
+                                        (tab[4] == tab[2] && tab[4] == current_player.symbole))
+                                    {
+                                        choix_def = 6;
+                                    }
+
+                                    choix_case = 6;
+                                }
+                                break;
+                            case 7:
+                                if ((tab[6] == tab[8] && tab[6] != ' ') ||
+                                    (tab[4] == tab[1] && tab[4] != ' '))
+                                {
+                                    if ((tab[6] == tab[8] && tab[6] == current_player.symbole) ||
+                                        (tab[4] == tab[1] && tab[4] == current_player.symbole))
+                                    {
+                                        choix_def = 7;
+                                    }
+                                    choix_case = 7;
+                                }
+                                break;
+                            case 8:
+                                if ((tab[7] == tab[6] && tab[7] != ' ') ||
+                                    (tab[4] == tab[0] && tab[4] != ' ') ||
+                                    (tab[5] == tab[2] && tab[5] != ' '))
+                                {
+                                    if ((tab[7] == tab[6] && tab[7] == current_player.symbole) ||
+                                        (tab[4] == tab[0] && tab[4] == current_player.symbole) ||
+                                        (tab[5] == tab[2] && tab[5] == current_player.symbole))
+                                    {
+                                        choix_def = 8;
+                                    }
+                                    choix_case = 8;
+                                }
+                                break;
+
+                            default:
+                                break;
+                            }
+                        }
+                    }
+
+
 */
 
 #include <iostream>
@@ -210,143 +333,53 @@ void game_start(Player player1, Player player2, std::array<char, 9> tab, int mod
                 {
                     int choix_case{10};
                     int choix_def{10};
+                    const int combinaisons[8][3] = {
+                        {0, 1, 2}, {3, 4, 5}, {6, 7, 8}, // Lignes
+                        {0, 3, 6},
+                        {1, 4, 7},
+                        {2, 5, 8}, // Colonnes
+                        {0, 4, 8},
+                        {2, 4, 6} // Diagonales
+                    };
                     for (int i = 0; i < tab.size(); i++)
                     {
                         if (tab[i] == ' ')
                         {
-                            switch (i)
+                            for (const auto &combinaison : combinaisons)
                             {
-                            case 0:
-                                if ((tab[1] == tab[2] && tab[1] != ' ') ||
-                                    (tab[3] == tab[6] && tab[3] != ' ') ||
-                                    (tab[4] == tab[8] && tab[4] != ' '))
+                                // Si la case actuelle est dans la combinaison
+                                if (i == combinaison[0] || i == combinaison[1] || i == combinaison[2])
                                 {
-
-                                    if ((tab[1] == tab[2] && tab[1] == current_player.symbole) ||
-                                        (tab[3] == tab[6] && tab[3] == current_player.symbole) ||
-                                        (tab[4] == tab[8] && tab[4] == current_player.symbole))
+                                    // Vérifie si cette combinaison est presque complète
+                                    if (tab[combinaison[0]] == tab[combinaison[1]] && tab[combinaison[0]] != ' ' && tab[combinaison[2]] == ' ')
                                     {
-                                        choix_def = 0;
+                                        choix_case = i;
+                                        if (tab[combinaison[0]] == current_player.symbole)
+                                        {
+                                            choix_def = i;
+                                        }
                                     }
-
-                                    choix_case = 0;
-                                }
-                                break;
-                            case 1:
-                                if ((tab[0] == tab[2] && tab[0] != ' ') ||
-                                    (tab[4] == tab[7] && tab[4] != ' '))
-                                {
-                                    if ((tab[0] == tab[2] && tab[0] == current_player.symbole) ||
-                                        (tab[4] == tab[7] && tab[4] == current_player.symbole))
+                                    else if (tab[combinaison[1]] == tab[combinaison[2]] && tab[combinaison[1]] != ' ' && tab[combinaison[0]] == ' ')
                                     {
-                                        choix_def = 1;
+                                        choix_case = i;
+                                        if (tab[combinaison[1]] == current_player.symbole)
+                                        {
+                                            choix_def = i;
+                                        }
                                     }
-                                    choix_case = 1;
-                                }
-                                break;
-                            case 2:
-                                if ((tab[0] == tab[1] && tab[0] != ' ') ||
-                                    (tab[4] == tab[6] && tab[4] != ' ') ||
-                                    (tab[5] == tab[8] && tab[5] != ' '))
-                                {
-                                    if ((tab[0] == tab[1] && tab[0] == current_player.symbole) ||
-                                        (tab[5] == tab[8] && tab[5] == current_player.symbole) ||
-                                        (tab[4] == tab[6] && tab[4] == current_player.symbole))
+                                    else if (tab[combinaison[0]] == tab[combinaison[2]] && tab[combinaison[0]] != ' ' && tab[combinaison[1]] == ' ')
                                     {
-                                        choix_def = 2;
+                                        choix_case = i;
+                                        if (tab[combinaison[0]] == current_player.symbole)
+                                        {
+                                            choix_def = i;
+                                        }
                                     }
-
-                                    choix_case = 2;
                                 }
-                                break;
-                            case 3:
-                                if ((tab[0] == tab[6] && tab[0] != ' ') ||
-                                    (tab[4] == tab[5] && tab[4] != ' '))
-                                {
-                                    if ((tab[0] == tab[6] && tab[0] == current_player.symbole) ||
-                                        (tab[4] == tab[5] && tab[4] == current_player.symbole))
-                                    {
-                                        choix_def = 3;
-                                    }
-                                    choix_case = 3;
-                                }
-                                break;
-                            case 4:
-                                if ((tab[0] == tab[8] && tab[0] != ' ') ||
-                                    (tab[1] == tab[7] && tab[1] != ' ') ||
-                                    (tab[2] == tab[6] && tab[2] != ' ') ||
-                                    (tab[3] == tab[5] && tab[3] != ' '))
-                                {
-                                    if ((tab[0] == tab[8] && tab[0] == current_player.symbole) ||
-                                        (tab[1] == tab[7] && tab[1] == current_player.symbole) ||
-                                        (tab[2] == tab[6] && tab[2] == current_player.symbole) ||
-                                        (tab[3] == tab[5] && tab[3] == current_player.symbole))
-                                    {
-                                        choix_def = 4;
-                                    }
-                                    choix_case = 4;
-                                }
-                                break;
-                            case 5:
-                                if ((tab[2] == tab[8] && tab[2] != ' ') ||
-                                    (tab[4] == tab[3] && tab[4] != ' '))
-                                {
-                                    if ((tab[2] == tab[8] && tab[2] == current_player.symbole) ||
-                                        (tab[4] == tab[3] && tab[4] == current_player.symbole))
-                                    {
-                                        choix_def = 5;
-                                    }
-                                    choix_case = 5;
-                                }
-                                break;
-                            case 6:
-                                if ((tab[0] == tab[3] && tab[0] != ' ') ||
-                                    (tab[7] == tab[8] && tab[7] != ' ') ||
-                                    (tab[4] == tab[2] && tab[4] != ' '))
-                                {
-                                    if ((tab[0] == tab[3] && tab[0] == current_player.symbole) ||
-                                        (tab[7] == tab[8] && tab[7] == current_player.symbole) ||
-                                        (tab[4] == tab[2] && tab[4] == current_player.symbole))
-                                    {
-                                        choix_def = 6;
-                                    }
-
-                                    choix_case = 6;
-                                }
-                                break;
-                            case 7:
-                                if ((tab[6] == tab[8] && tab[6] != ' ') ||
-                                    (tab[4] == tab[1] && tab[4] != ' '))
-                                {
-                                    if ((tab[6] == tab[8] && tab[6] == current_player.symbole) ||
-                                        (tab[4] == tab[1] && tab[4] == current_player.symbole))
-                                    {
-                                        choix_def = 7;
-                                    }
-                                    choix_case = 7;
-                                }
-                                break;
-                            case 8:
-                                if ((tab[7] == tab[6] && tab[7] != ' ') ||
-                                    (tab[4] == tab[0] && tab[4] != ' ') ||
-                                    (tab[5] == tab[2] && tab[5] != ' '))
-                                {
-                                    if ((tab[7] == tab[6] && tab[7] == current_player.symbole) ||
-                                        (tab[4] == tab[0] && tab[4] == current_player.symbole) ||
-                                        (tab[5] == tab[2] && tab[5] == current_player.symbole))
-                                    {
-                                        choix_def = 8;
-                                    }
-                                    choix_case = 8;
-                                }
-                                break;
-
-                            default:
-                                break;
                             }
                         }
                     }
-                    
+
                     if (choix_def != 10)
                     {
                         tab[choix_def] = current_player.symbole;
