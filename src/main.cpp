@@ -1,4 +1,4 @@
-/*rest à implémenter IA niveau 2 :
+/*reste à implémenter IA niveau 2 :
 
 L'IA doit prioriser sa victoire plutot que bloquer l'adversaire.
 exemple :
@@ -16,10 +16,6 @@ Ici l'IA doit jouer en B1 mais voilà ce qu'elle fait :
 
 elle va au dernier 3 rencontré alors qu'elle devrait d'abord regarder si ses pions peuvent gagner, si c'est le cas, elle priorise son choix
 */
-
-
-
-
 
 #include <iostream>
 #include "Player.h"
@@ -213,6 +209,7 @@ void game_start(Player player1, Player player2, std::array<char, 9> tab, int mod
                 else if (niveau_ia == 2)
                 {
                     int choix_case{10};
+                    int choix_def{10};
                     for (int i = 0; i < tab.size(); i++)
                     {
                         if (tab[i] == ' ')
@@ -224,6 +221,14 @@ void game_start(Player player1, Player player2, std::array<char, 9> tab, int mod
                                     (tab[3] == tab[6] && tab[3] != ' ') ||
                                     (tab[4] == tab[8] && tab[4] != ' '))
                                 {
+
+                                    if ((tab[1] == tab[2] && tab[1] == current_player.symbole) ||
+                                        (tab[3] == tab[6] && tab[3] == current_player.symbole) ||
+                                        (tab[4] == tab[8] && tab[4] == current_player.symbole))
+                                    {
+                                        choix_def = 0;
+                                    }
+
                                     choix_case = 0;
                                 }
                                 break;
@@ -231,6 +236,11 @@ void game_start(Player player1, Player player2, std::array<char, 9> tab, int mod
                                 if ((tab[0] == tab[2] && tab[0] != ' ') ||
                                     (tab[4] == tab[7] && tab[4] != ' '))
                                 {
+                                    if ((tab[0] == tab[2] && tab[0] == current_player.symbole) ||
+                                        (tab[4] == tab[7] && tab[4] == current_player.symbole))
+                                    {
+                                        choix_def = 1;
+                                    }
                                     choix_case = 1;
                                 }
                                 break;
@@ -239,6 +249,13 @@ void game_start(Player player1, Player player2, std::array<char, 9> tab, int mod
                                     (tab[4] == tab[6] && tab[4] != ' ') ||
                                     (tab[5] == tab[8] && tab[5] != ' '))
                                 {
+                                    if ((tab[0] == tab[1] && tab[0] == current_player.symbole) ||
+                                        (tab[5] == tab[8] && tab[5] == current_player.symbole) ||
+                                        (tab[4] == tab[6] && tab[4] == current_player.symbole))
+                                    {
+                                        choix_def = 2;
+                                    }
+
                                     choix_case = 2;
                                 }
                                 break;
@@ -246,6 +263,11 @@ void game_start(Player player1, Player player2, std::array<char, 9> tab, int mod
                                 if ((tab[0] == tab[6] && tab[0] != ' ') ||
                                     (tab[4] == tab[5] && tab[4] != ' '))
                                 {
+                                    if ((tab[0] == tab[6] && tab[0] == current_player.symbole) ||
+                                        (tab[4] == tab[5] && tab[4] == current_player.symbole))
+                                    {
+                                        choix_def = 3;
+                                    }
                                     choix_case = 3;
                                 }
                                 break;
@@ -255,6 +277,13 @@ void game_start(Player player1, Player player2, std::array<char, 9> tab, int mod
                                     (tab[2] == tab[6] && tab[2] != ' ') ||
                                     (tab[3] == tab[5] && tab[3] != ' '))
                                 {
+                                    if ((tab[0] == tab[8] && tab[0] == current_player.symbole) ||
+                                        (tab[1] == tab[7] && tab[1] == current_player.symbole) ||
+                                        (tab[2] == tab[6] && tab[2] == current_player.symbole) ||
+                                        (tab[3] == tab[5] && tab[3] == current_player.symbole))
+                                    {
+                                        choix_def = 4;
+                                    }
                                     choix_case = 4;
                                 }
                                 break;
@@ -262,6 +291,11 @@ void game_start(Player player1, Player player2, std::array<char, 9> tab, int mod
                                 if ((tab[2] == tab[8] && tab[2] != ' ') ||
                                     (tab[4] == tab[3] && tab[4] != ' '))
                                 {
+                                    if ((tab[2] == tab[8] && tab[2] == current_player.symbole) ||
+                                        (tab[4] == tab[3] && tab[4] == current_player.symbole))
+                                    {
+                                        choix_def = 5;
+                                    }
                                     choix_case = 5;
                                 }
                                 break;
@@ -270,6 +304,13 @@ void game_start(Player player1, Player player2, std::array<char, 9> tab, int mod
                                     (tab[7] == tab[8] && tab[7] != ' ') ||
                                     (tab[4] == tab[2] && tab[4] != ' '))
                                 {
+                                    if ((tab[0] == tab[3] && tab[0] == current_player.symbole) ||
+                                        (tab[7] == tab[8] && tab[7] == current_player.symbole) ||
+                                        (tab[4] == tab[2] && tab[4] == current_player.symbole))
+                                    {
+                                        choix_def = 6;
+                                    }
+
                                     choix_case = 6;
                                 }
                                 break;
@@ -277,7 +318,11 @@ void game_start(Player player1, Player player2, std::array<char, 9> tab, int mod
                                 if ((tab[6] == tab[8] && tab[6] != ' ') ||
                                     (tab[4] == tab[1] && tab[4] != ' '))
                                 {
-                                    std::cout << "\nprends le 7\n";
+                                    if ((tab[6] == tab[8] && tab[6] == current_player.symbole) ||
+                                        (tab[4] == tab[1] && tab[4] == current_player.symbole))
+                                    {
+                                        choix_def = 7;
+                                    }
                                     choix_case = 7;
                                 }
                                 break;
@@ -286,6 +331,12 @@ void game_start(Player player1, Player player2, std::array<char, 9> tab, int mod
                                     (tab[4] == tab[0] && tab[4] != ' ') ||
                                     (tab[5] == tab[2] && tab[5] != ' '))
                                 {
+                                    if ((tab[7] == tab[6] && tab[7] == current_player.symbole) ||
+                                        (tab[4] == tab[0] && tab[4] == current_player.symbole) ||
+                                        (tab[5] == tab[2] && tab[5] == current_player.symbole))
+                                    {
+                                        choix_def = 8;
+                                    }
                                     choix_case = 8;
                                 }
                                 break;
@@ -295,8 +346,12 @@ void game_start(Player player1, Player player2, std::array<char, 9> tab, int mod
                             }
                         }
                     }
-
-                    if (choix_case == 10)
+                    
+                    if (choix_def != 10)
+                    {
+                        tab[choix_def] = current_player.symbole;
+                    }
+                    else if (choix_case == 10)
                     {
                         int random_index = 1 + (std::rand() % 9);
                         while (tab[random_index] != ' ')
@@ -368,12 +423,12 @@ void game_start(Player player1, Player player2, std::array<char, 9> tab, int mod
         if (current_player.name == player1.name)
         {
             std::cout << "\n"
-                      << player2.name << " a gagne, t nul\n";
+                      << player2.name << " a gagne";
         }
         else if (current_player.name == player2.name)
         {
             std::cout << "\n"
-                      << player1.name << " a gagne, bien ouej\n";
+                      << player1.name << " a gagne";
         }
     }
 
